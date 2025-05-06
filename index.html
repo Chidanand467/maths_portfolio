@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chidanand Karennavar - Differential Equations</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'button':'8px'}}}}</script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style>
         body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', sans-serif; }
-        .section-fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .section-fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s; }
         .section-fade-in.visible { opacity: 1; transform: translateY(0); }
-        .desmos-container { width: 100%; height: 300px; margin: 1rem 0; border-radius: 12px; box-shadow: 0 4px 24px rgba(79,70,229,0.08); }
-        .equation-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .desmos-container { width: 100%; height: 300px; margin: 1.5rem 0; border-radius: 12px; box-shadow: 0 4px 24px rgba(79,70,229,0.08); }
+        .equation-card { transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 2rem; }
         .equation-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.12), 0 10px 10px -5px rgba(0,0,0,0.04); }
         .section-divider { height: 2px; background: linear-gradient(90deg, rgba(79,70,229,0) 0%, rgba(79,70,229,1) 50%, rgba(79,70,229,0) 100%); margin: 2rem 0; }
         .gradient-bg { background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%); }
         .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #4F46E5; transition: width 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #4F46E5; transition: width 0.3s; }
         .nav-link:hover::after { width: 100%; }
         .active-nav::after { width: 100%; }
         .img-zoom { transition: transform 0.4s cubic-bezier(.34,1.56,.64,1); }
@@ -67,7 +66,9 @@
                     <p class="text-md">Roll Number: 1926</p>
                     <p class="text-md">Email: 01fe24bar027@kletech.ac.in</p>
                 </div>
-                <p class="text-lg md:text-xl mb-8 opacity-90">A comprehensive guide to First and Second Order Differential Equations with real-life insights from my learning journey</p>
+                <p class="text-lg md:text-xl mb-8 opacity-90">
+                    A comprehensive guide to First and Second Order Differential Equations with real-life insights from my learning journey
+                </p>
                 <div class="flex justify-center space-x-4">
                     <a href="#first-order" class="inline-block bg-white text-primary font-medium px-6 py-3 rounded-button shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer">First Order DE</a>
                     <a href="#second-order" class="inline-block bg-white text-primary font-medium px-6 py-3 rounded-button shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer">Second Order DE</a>
@@ -79,20 +80,20 @@
     <main class="container mx-auto px-4 py-8">
         <!-- First-Order Differential Equations -->
         <section id="first-order" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Chapter 1: First-Order Differential Equations</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 1: First-Order Differential Equations</h2>
             <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <p class="text-gray-700 mb-4">First-order differential equations involve derivatives of the first order only. They are fundamental in modeling various physical phenomena and serve as building blocks for more complex systems. In class, I learned how these equations can model real-world scenarios like how a cup of coffee cools down over time, making me realize their practical importance in everyday life.</p>
-                    <div class="equation-card bg-gradient-to-br from-primary to-secondary p-6 rounded-lg shadow-md mb-6 animate-pulse">
-                        <h3 class="text-xl font-semibold mb-3 text-white">General Form</h3>
-                        <div class="bg-white p-4 rounded-md">
+                    <p class="text-gray-700 mb-6 text-lg">First-order differential equations involve derivatives of the first order only. They are fundamental in modeling many physical phenomena and serve as building blocks for more complex systems. In class, I learned how these equations can model real-world scenarios like how a cup of coffee cools down over time, making me realize their practical importance in everyday life.</p>
+                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-primary">General Form</h3>
+                        <div class="bg-gray-50 p-4 rounded-md mb-2">
                             \[ \frac{dy}{dx} = f(x, y) \]
                         </div>
                     </div>
                     <div class="equation-card bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold mb-3 text-primary">Separable Equations</h3>
-                        <div class="bg-gray-50 p-4 rounded-md">
+                        <div class="bg-gray-50 p-4 rounded-md mb-2">
                             \[ \frac{dy}{dx} = g(x)h(y) \]
                             <p class="mt-2 text-gray-600">Solution approach:</p>
                             \[ \int \frac{1}{h(y)} \, dy = \int g(x) \, dx + C \]
@@ -101,22 +102,22 @@
                     </div>
                 </div>
                 <div>
-                    <div class="equation-card bg-gradient-to-br from-primary to-secondary p-6 rounded-lg shadow-md mb-6 animate-pulse">
-                        <h3 class="text-xl font-semibold mb-3 text-white">Exponential Growth/Decay</h3>
-                        <div class="bg-white p-4 rounded-md">
+                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Exponential Growth/Decay</h3>
+                        <div class="bg-gray-50 p-4 rounded-md mb-2">
                             \[ \frac{dP}{dt} = rP \]
                             <p class="mt-2 text-gray-600">Solution:</p>
                             \[ P(t) = P_0 \cdot e^{rt} \]
                             <p class="mt-2 text-sm text-gray-500">Where \(P_0\) is the initial value and \(r\) is the growth/decay rate.</p>
                         </div>
-                        <p class="mt-4 text-white">Real-Life Application: This models population growth in biology or compound interest in finance. I found it fascinating how a simple equation can predict such diverse phenomena.</p>
+                        <p class="mt-4 text-gray-700">Real-Life Application: This models population growth in biology or compound interest in finance. I found it fascinating how a simple equation can predict such diverse phenomena.</p>
                     </div>
                     <div class="desmos-container" id="exponential-growth"></div>
                     <p class="text-sm text-gray-600 text-center mb-4">This interactive graph demonstrates exponential growth, where the rate of growth is proportional to the current value. By adjusting the growth rate 'r', you can see how quickly the quantity increases. This model is crucial in understanding phenomena like population dynamics or compound interest.</p>
                     <div class="flex justify-center space-x-4 mb-4">
                         <div class="flex items-center">
                             <label for="growth-rate" class="mr-2 text-sm text-gray-600">Growth rate (r):</label>
-                            <input type="range" id="growth-rate" min="-2" max="2" step="0.1" value="0.5" class="w-32 accent-primary">
+                            <input type="range" id="growth-rate" min="-2" max="2" step="0.1" value="0.5" class="w-32">
                             <span id="growth-rate-value" class="ml-2 text-sm text-gray-600">0.5</span>
                         </div>
                     </div>
@@ -125,12 +126,12 @@
         </section>
         <!-- Direction Fields -->
         <section id="direction-fields" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Direction Fields</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Direction Fields</h2>
             <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <p class="text-gray-700 mb-4">Direction fields (also called slope fields) provide a visual representation of the solutions to a first-order differential equation. Each arrow in the field represents the slope of the solution curve at that point. Direction fields gave me a new way to look at DEs in class, focusing on the behavior of solutions rather than just the formulas.</p>
-                    <div class="equation-card bg-white p-6 rounded-lg shadow-md mb-6">
+                    <p class="text-gray-700 mb-6 text-lg">Direction fields (also called slope fields) provide a visual representation of the solutions to a first-order differential equation. Each arrow in the field represents the slope of the solution curve at that point. Direction fields gave me a new way to look at DEs in class, focusing on the behavior of solutions rather than just the formulas.</p>
+                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
                         <h3 class="text-xl font-semibold mb-3 text-primary">Concept</h3>
                         <p class="text-gray-700">For a differential equation \(\frac{dy}{dx} = f(x,y)\), the direction field shows vectors with slope \(f(x,y)\) at various points \((x,y)\) in the plane.</p>
                         <p class="mt-4 text-gray-700">Real-Life Application: Used in meteorology to predict weather patterns by visualizing wind flow directions.</p>
@@ -153,44 +154,26 @@
                 </div>
             </div>
         </section>
-        <!-- Lab Assessment Section -->
-        <section id="lab" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Lab: Newton's Law of Cooling</h2>
-            <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                    <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-04-22%20220427.png" alt="Lab Question and Analytical Solution" class="rounded-lg shadow-md mb-4 img-zoom">
-                    <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/carbon.png?raw=true" alt="Python Code for Newton's Law of Cooling" class="rounded-lg shadow-md mb-4 img-zoom">
-                </div>
-                <div>
-                    <img src="hhttps://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-04-21%20110340.png" alt="Python Output and Cooling Curve" class="rounded-lg shadow-md mb-4 img-zoom">
-                    <div class="bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-lg shadow-md animate-pulse">
-                        <h4 class="font-bold">Analysis:</h4>
-                        <p>The graph shows how the coffee cools from 95°C towards room temperature (20°C) over time, following an exponential decay. The Python code uses the Runge-Kutta method (RK4) for accurate numerical solution, and the output matches the analytical solution, confirming the validity of both approaches.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- Second-Order Differential Equations -->
         <section id="second-order" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Chapter 2: Second-Order Differential Equations</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 2: Second-Order Differential Equations</h2>
             <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <p class="text-gray-700 mb-4">Second-order differential equations involve the second derivative of the unknown function. They are central to modeling systems with acceleration or oscillatory behavior, such as mechanical vibrations, electrical circuits, and more.</p>
-                    <div class="equation-card bg-gradient-to-br from-primary to-secondary p-6 rounded-lg shadow-md mb-6 animate-pulse">
-                        <h3 class="text-xl font-semibold mb-3 text-white">General Linear Form</h3>
-                        <div class="bg-white p-4 rounded-md">
+                    <p class="text-gray-700 mb-6 text-lg">Second-order differential equations involve the second derivative of the unknown function. They are central to modeling systems with acceleration or oscillatory behavior, such as mechanical vibrations, electrical circuits, and more.</p>
+                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-primary">General Linear Form</h3>
+                        <div class="bg-gray-50 p-4 rounded-md mb-2">
                             \[ a\frac{d^2y}{dx^2} + b\frac{dy}{dx} + cy = f(x) \]
                         </div>
-                        <p class="mt-4 text-white">Real-Life Application: Used in modeling mass-spring-damper systems, RLC circuits, and beam deflection in civil engineering.</p>
+                        <p class="mt-4 text-gray-700">Real-Life Application: Used in modeling mass-spring-damper systems, RLC circuits, and beam deflection in civil engineering.</p>
                     </div>
-                    <div class="equation-card bg-gradient-to-br from-primary to-secondary p-6 rounded-lg shadow-md animate-pulse">
-                        <h3 class="text-xl font-semibold mb-3 text-white">Homogeneous Solution</h3>
-                        <div class="bg-white p-4 rounded-md">
+                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Homogeneous Solution</h3>
+                        <div class="bg-gray-50 p-4 rounded-md mb-2">
                             \[ y = C_1 e^{x} + C_2 e^{2x} \]
                         </div>
-                        <p class="mt-4 text-white">Physical Insight: The solution is a combination of exponential functions, showing how the system's response can grow or decay over time depending on initial conditions.</p>
+                        <p class="mt-4 text-gray-700">Physical Insight: The solution is a combination of exponential functions, showing how the system's response can grow or decay over time depending on initial conditions.</p>
                     </div>
                 </div>
                 <div>
@@ -198,17 +181,75 @@
                     <div class="flex justify-center space-x-4 mb-4">
                         <div class="flex items-center">
                             <label for="c1-value" class="mr-2 text-sm text-gray-600">C₁:</label>
-                            <input type="range" id="c1-value" min="-2" max="2" step="0.1" value="1" class="w-32 accent-primary">
+                            <input type="range" id="c1-value" min="-2" max="2" step="0.1" value="1" class="w-32">
                             <span id="c1-value-display" class="ml-2 text-sm text-gray-600">1</span>
                         </div>
                         <div class="flex items-center ml-6">
                             <label for="c2-value" class="mr-2 text-sm text-gray-600">C₂:</label>
-                            <input type="range" id="c2-value" min="-2" max="2" step="0.1" value="1" class="w-32 accent-primary">
+                            <input type="range" id="c2-value" min="-2" max="2" step="0.1" value="1" class="w-32">
                             <span id="c2-value-display" class="ml-2 text-sm text-gray-600">1</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- Lab Section at the End -->
+        <section id="lab" class="section-fade-in py-16 mt-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Lab Assessment: Newton's Law of Cooling</h2>
+            <div class="section-divider"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
+                <div>
+                    <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/68099101/CiDgmJonAPKfqxC/Screenshot-2025-04-22-220427.jpg" alt="Lab Question and Analytical Solution" class="rounded-lg shadow-md mb-6 img-zoom">
+                </div>
+                <div>
+                    <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/68099101/PwQRXwktKTNBCYa/carbon.jpg" alt="Python Code for Newton's Law of Cooling" class="rounded-lg shadow-md mb-6 img-zoom">
+                </div>
+                <div>
+                    <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/68099101/uSmnvWZZcYRUtdd/Screenshot-2025-04-27-214536.jpg" alt="Python Output and Cooling Curve" class="rounded-lg shadow-md mb-6 img-zoom">
+                    <div class="bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-lg shadow-md animate-pulse">
+                        <h4 class="font-bold mb-2">Analysis:</h4>
+                        <p>
+                            The graph shows how the coffee cools from 95°C towards room temperature (20°C) over time, following an exponential decay. The Python code uses the Runge-Kutta method (RK4) for accurate numerical solution, and the output matches the analytical solution, confirming the validity of both approaches.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Real-Life Applications Card (add this after your lab images/analysis in the Lab section) -->
+<div class="mt-10">
+    <h3 class="text-xl font-semibold mb-4 text-primary">Real-Life Applications of Differential Equations</h3>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+                <b>Cooling and Heating:</b> Newton’s Law of Cooling models how hot objects cool down (e.g., coffee cooling, body temperature after death in forensics, industrial cooling processes).
+            </li>
+            <li>
+                <b>Population Growth:</b> Exponential and logistic equations model how populations of organisms or bacteria grow and stabilize.
+            </li>
+            <li>
+                <b>Finance:</b> Compound interest, loan amortization, and investment growth are modeled using first-order DEs.
+            </li>
+            <li>
+                <b>Physics:</b> Second-order DEs describe motion under gravity, spring-mass-damper systems, and electrical circuits (RLC circuits).
+            </li>
+            <li>
+                <b>Medicine:</b> Drug concentration in the bloodstream over time (pharmacokinetics) is modeled with first-order DEs.
+            </li>
+            <li>
+                <b>Engineering:</b> Control systems, signal processing, and vibration analysis all rely on differential equations.
+            </li>
+            <li>
+                <b>Chemistry:</b> Reaction rates and radioactive decay are governed by first-order DEs.
+            </li>
+        </ul>
+        <div class="mt-6 flex justify-center">
+            <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/68099101/CiDgmJonAPKfqxC/Screenshot-2025-04-22-220427.jpg" alt="Newton's Law of Cooling in Real Life" class="rounded-lg shadow-md w-2/3 img-zoom">
+        </div>
+        <p class="mt-4 text-gray-700 text-center text-sm">
+            <b>Summary:</b> Differential equations are everywhere! From cooling coffee to predicting epidemics, they help us understand and shape the world.
+        </p>
+    </div>
+</div>
+
         </section>
     </main>
     <footer class="bg-gray-900 text-gray-200 py-12 mt-16">
