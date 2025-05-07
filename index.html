@@ -3,7 +3,7 @@
 <head>
       <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chidanand Karennavar - Differential Equations Portfolio</title>
+    <title>Chidanand S Karennavar - Differential Equations Portfolio</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://www.desmos.com/api/v1.7/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
@@ -208,58 +208,6 @@
         </div>
     </div>
 </section>
-
-          <section id="newtons-cooling-law" style="padding: 20px; border-top: 2px solid #ccc; margin-top: 30px;">
-  <h2 style="color: #2c3e50; border-left: 4px solid #2980b9; padding-left: 10px;">Comparison between Euler's and R-K method</h2>
-  
-  <h3>Problem Statement</h3>
-  <p>
-    A cup of coffee at 90°C cools in a room at 25°C. The cooling constant is \( k = 0.1 \, \text{min}^{-1} \). We want to find the temperature after 5 minutes using Euler’s and RK4 methods, with a step size of 1 minute.
-  </p>
-  
-  <h3>Step 1: Differential Equation</h3>
-  <p>
-    \( \frac{dT}{dt} = -k (T - T_{\text{room}}) \), where \( T_{\text{room}} = 25^\circ C \), \( k = 0.1 \).
-  </p>
-  
-  <h3>Step 2: Euler’s Method</h3>
-  <p>
-    Using update \( T_{n+1} = T_n + h \cdot (-0.1 (T_n - 25)) \).
-    <br>
-    After 5 steps, approximate final temperature: <strong>~63.4°C</strong>.
-  </p>
-  
-  <h3>Step 3: RK4 Method</h3>
-  <p>
-    Using RK4 formulas with 5 steps, approximate final temperature: <strong>~63.6°C</strong>.
-  </p>
-  
-  <h3>Step 4: Comparison</h3>
-  <table border="1" cellpadding="5">
-    <tr>
-      <th>Method</th>
-      <th>Temperature (°C after 5 min)</th>
-    </tr>
-    <tr>
-      <td>Euler</td>
-      <td>63.4</td>
-    </tr>
-    <tr>
-      <td>RK4</td>
-      <td>63.6</td>
-    </tr>
-    <tr>
-      <td>Exact (analytic)</td>
-      <td>63.7</td>
-    </tr>
-  </table>
-  
-  <h3>Summary</h3>
-  <p>
-    RK4 provides better accuracy compared to Euler’s method due to its higher-order corrections, making it preferable for precise calculations.
-  </p>
-</section>
-
 <!-- Linear Differential Equations -->
         <section id="linear-de" class="section-fade-in py-12 mt-8">
             <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Linear Differential Equations</h2>
@@ -281,6 +229,88 @@
                 </div>
             </div>
         </section>
+
+<section id="newtons-cooling-law" style="padding: 30px; margin: 40px 0; border-top: 2px solid #ccc;">
+  
+  <h2 style="color: #2c3e50; font-size: 28px; border-left: 5px solid #2980b9; padding-left: 15px; margin-bottom: 20px;">
+    Example: Newton's Law of Cooling
+  </h2>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Problem Statement</h3>
+    <p style="line-height: 1.6;">
+      A cup of coffee at 90°C cools in a room at 25°C. The cooling constant is 
+      <strong>k = 0.1 min⁻¹</strong>. We want to find the temperature after 5 minutes 
+      using Euler’s method and RK4 method, with a step size of 1 minute.
+    </p>
+  </div>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Step 1: Differential Equation</h3>
+    <p style="line-height: 1.6;">
+      Newton’s Law of Cooling:
+      <br>
+      <strong>dT/dt = -k (T - T_room)</strong>, where T_room = 25°C, k = 0.1.
+    </p>
+  </div>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Step 2: Euler’s Method</h3>
+    <p style="line-height: 1.6;">
+      Apply the update formula:
+      <br>
+      <strong>Tₙ₊₁ = Tₙ + h * (-0.1 * (Tₙ - 25))</strong>
+      <br>
+      After 5 steps, we get an approximate final temperature: <strong>~63.4°C</strong>.
+    </p>
+  </div>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Step 3: RK4 Method</h3>
+    <p style="line-height: 1.6;">
+      Using RK4 formulas over 5 steps, we obtain an approximate final temperature:
+      <strong>~63.6°C</strong>.
+    </p>
+  </div>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Step 4: Comparison</h3>
+    <table style="width: 60%; border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 10px; border: 1px solid #ddd;">Method</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Temperature (°C after 5 min)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Euler</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">63.4</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">RK4</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">63.6</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Exact (analytic)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">63.7</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div style="margin-bottom: 25px;">
+    <h3 style="color: #34495e;">Summary & Insights</h3>
+    <p style="line-height: 1.6;">
+      RK4 provides higher accuracy compared to Euler’s method due to its 
+      higher-order corrections, making it better suited for precise calculations. 
+      Euler’s method, while simpler, tends to accumulate more error over steps.
+    </p>
+  </div>
+  
+</section>
+
+          
         <!-- Second-Order Differential Equations -->
         <section id="second-order" class="section-fade-in py-12 mt-8">
             <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Second-Order Differential Equations</h2>
@@ -324,7 +354,7 @@
         </section>
 
          <section id="reflection-questions" style="padding: 20px; border-top: 2px solid #ccc; margin-top: 30px;">
-  <h2 style="color: #2c3e50; border-left: 4px solid #2980b9; padding-left: 10px;">Reflection Questions</h2>
+  <h1 style="color: #2c3e50; border-left: 4px solid #2980b9; padding-left: 10px;">Reflection Questions</h1>
   
   <div style="margin-top: 20px;">
     <h3>1. What forces do the terms indicate with respect to the parachutist’s descent?</h3>
@@ -352,7 +382,7 @@
   </div>
 </section>
 <section id="calculus-solution" style="padding: 20px; border-top: 2px solid #ccc; margin-top: 30px;">
-  <h2 style="color: #2c3e50; border-left: 4px solid #27ae60; padding-left: 10px;">Detailed Calculus Solution</h2>
+  <h1 style="color: #2c3e50; border-left: 4px solid #27ae60; padding-left: 10px;">Calculus Solution</h1>
   
   <p><strong>Problem Setup:</strong> A parachutist descends under two forces: gravitational force pulling downward and air drag resisting upward. Let’s derive the mathematical model.</p>
   
