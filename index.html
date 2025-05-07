@@ -462,32 +462,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Direction Field for dy/dx = y - x
-    var dirElt = document.getElementById('direction-field');
-    if (dirElt) {
-        var dirCalc = Desmos.GraphingCalculator(dirElt, {expressions: false, settingsMenu: false});
-        dirCalc.setExpression({
-            id: 'dirfield',
-            latex: 'v_{x}=x,\\ v_{y}=y,\\ slope=y-x,\\ \\left\\{\\operatorname{segment}\\left((x,y),\\left(x+0.2,\\ y+0.2\\cdot slope/\\sqrt{1+slope^{2}}\\right)\\right):x=0...4\\ and\\ y=0...4\\right\\}',
-            color: Desmos.Colors.BLUE
+// Direction Field for dy/dx = y - x
+var dirElt = document.getElementById('direction-field');
+if (dirElt) {
+    var dirCalc = Desmos.GraphingCalculator(dirElt, { expressions: false, settingsMenu: false });
+
+    // Generate direction field using Desmos parametric segments
+    dirCalc.setExpression({
+        id: 'dirfield',
+        latex: `
+            \\left\\{
+                \\operatorname{segment}\\left(
+                    (x, y), 
+                    \\left(x + 0.2 / \\sqrt{1 + (y - x)^2},\ y + 0.2 * (y - x) / \\sqrt{1 + (y - x)^2}\\right)
+                \\right)
+                : x = -5...5,\ y = -5...5
+            \\right\\}
+        `,
+        color: Desmos.Colors.BLUE
+    });
+
+    var showSolution = false;
+    var btn = document.getElementById('toggle-solution');
+    if (btn) {
+        btn.addEventListener('click', function() {
+            showSolution = !showSolution;
+            if (showSolution) {
+                dirCalc.setExpression({
+                    id: 'sol1',
+                    latex: 'y = x + e^{x - 2}',
+                    color: Desmos.Colors.RED
+                });
+                dirCalc.setExpression({
+                    id: 'sol2',
+                    latex: 'y = x - 2e^{x - 1}',
+                    color: Desmos.Colors.GREEN
+                });
+                btn.textContent = "Hide Solution Curves";
+            } else {
+                dirCalc.removeExpression({ id: 'sol1' });
+                dirCalc.removeExpression({ id: 'sol2' });
+                btn.textContent = "Show Solution Curves";
+            }
         });
-        var showSolution = false;
-        var btn = document.getElementById('toggle-solution');
-        if (btn) {
-            btn.addEventListener('click', function() {
-                showSolution = !showSolution;
-                if (showSolution) {
-                    dirCalc.setExpression({id: 'sol1', latex: 'y=x+e^{x-2}', color: Desmos.Colors.RED});
-                    dirCalc.setExpression({id: 'sol2', latex: 'y=x-2e^{x-1}', color: Desmos.Colors.GREEN});
-                    btn.textContent = "Hide Solution Curves";
-                } else {
-                    dirCalc.removeExpression({id: 'sol1'});
-                    dirCalc.removeExpression({id: 'sol2'});
-                    btn.textContent = "Show Solution Curves";
-                }
-            });
-        }
     }
+}
 
     // Euler's Method Visualization
     var eulerElt = document.getElementById('euler-method');
