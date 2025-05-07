@@ -112,57 +112,103 @@
         </section>
 
         <!-- Enhanced Direction Fields Section -->
-        <section id="direction-fields" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Direction Fields</h2>
-            <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div>
-                    <p class="text-gray-700 mb-6 text-lg">Through creating these visualizations, I learned to predict solution behavior without solving the DE:</p>
-                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Key Insight</h3>
-                        <p class="text-gray-700">The density of arrows reveals stability - converging arrows indicate stable equilibrium critical in predicting long-term system behavior.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="desmos-container" id="direction-field"></div>
-                    <div class="text-sm text-gray-600 mt-4">
-                        <b>My Observation:</b> Toggling solution curves helped me understand sensitivity to initial conditions, particularly useful in weather prediction models.
-                    </div>
-                </div>
+       <section id="direction-fields" class="section-fade-in py-12 mt-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
+        Direction Fields
+    </h2>
+    <div class="section-divider mb-8"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div>
+            <p class="text-gray-700 mb-6 text-lg">
+                Through creating these visualizations, I learned to predict solution behavior without solving the DE:
+            </p>
+
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md mb-6">
+                <h3 class="text-xl font-semibold mb-3 text-primary">Equation Used</h3>
+                <p class="text-gray-700 text-lg italic">
+                    dy/dx = y (1 - y)
+                </p>
             </div>
-        </section>
+
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-3 text-primary">Key Insight</h3>
+                <p class="text-gray-700">
+                    The density of arrows reveals stability — converging arrows indicate stable equilibrium, critical in predicting long-term system behavior.
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <div class="desmos-container" id="direction-field"></div>
+            <div class="text-sm text-gray-600 mt-4">
+                <b>My Observation:</b> Toggling solution curves helped me understand sensitivity to initial conditions, particularly useful in weather prediction models.
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Enhanced Numerical Methods Section -->
-        <section id="numerical-methods" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Numerical Methods</h2>
-            <div class="section-divider"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Euler's Method in Practice</h3>
-                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-                        <p class="text-gray-700 mb-3">While implementing this, I learned that step size choice balances accuracy vs computation cost:</p>
-                        <div class="bg-gray-50 p-4 rounded-md">
-                            \[ \text{Error} \propto h^2 \]
-                        </div>
-                    </div>
-                    <div class="desmos-container" id="euler-method"></div>
-                    <div class="text-sm text-gray-600 mt-4">
-                        <b>My Finding:</b> Small step sizes (h=0.01) give smooth approximations but require 10x more computations than h=1.
-                    </div>
-                </div>
-                <!-- Existing RK4 content remains -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Runge-Kutta Method (RK4)</h3>
-                    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-                        <p class="text-gray-700 mb-3">RK4 is a more accurate numerical method, widely used in science and engineering for complex systems.</p>
-                        <div class="bg-gray-50 p-4 rounded-md">
-                            <p class="text-sm text-gray-600">Used in your lab code for Newton's Law of Cooling (see Lab section).</p>
-                        </div>
-                        <p class="mt-4 text-gray-700">Runge-Kutta methods are the backbone of scientific computing.</p>
-                    </div>
+     <section id="numerical-methods" class="section-fade-in py-12 mt-8">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
+        Numerical Methods
+    </h2>
+    <div class="section-divider mb-8"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <!-- Euler's Method -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Euler's Method in Practice</h3>
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md mb-4">
+                <p class="text-gray-700 mb-3">
+                    Euler’s Method approximates solutions using:
+                </p>
+                <div class="bg-gray-50 p-4 rounded-md text-center font-mono">
+                    yₙ₊₁ = yₙ + h·f(xₙ, yₙ)
                 </div>
             </div>
-        </section>
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                <p class="text-gray-700 mb-3">
+                    While implementing this, I learned that step size choice balances accuracy vs computation cost:
+                </p>
+                <div class="bg-gray-50 p-4 rounded-md text-center font-mono">
+                    Error ∝ h²
+                </div>
+            </div>
+            <div class="desmos-container mt-4" id="euler-method"></div>
+            <div class="text-sm text-gray-600 mt-4">
+                <b>My Finding:</b> Small step sizes (h = 0.01) give smooth approximations but require 10× more computations than h = 1.
+            </div>
+        </div>
+
+        <!-- Runge-Kutta (RK4) -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Runge-Kutta Method (RK4)</h3>
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md mb-4">
+                <p class="text-gray-700 mb-3">
+                    RK4 improves accuracy by combining multiple slope estimates:
+                </p>
+                <div class="bg-gray-50 p-4 rounded-md text-sm font-mono">
+                    k₁ = f(xₙ, yₙ)<br>
+                    k₂ = f(xₙ + h/2, yₙ + (h/2)·k₁)<br>
+                    k₃ = f(xₙ + h/2, yₙ + (h/2)·k₂)<br>
+                    k₄ = f(xₙ + h, yₙ + h·k₃)<br>
+                    <br>
+                    yₙ₊₁ = yₙ + (h/6)(k₁ + 2k₂ + 2k₃ + k₄)
+                </div>
+            </div>
+            <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+                <p class="text-sm text-gray-600">
+                    Used in your lab code for Newton's Law of Cooling (see Lab section).
+                </p>
+                <p class="mt-4 text-gray-700">
+                    Runge-Kutta methods are the backbone of scientific computing.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Existing other sections remain unchanged -->
 <!-- Linear Differential Equations -->
@@ -266,31 +312,30 @@
         Lab Assessment 2: Simulating Motion of a Robotic Arm 
     </h2>
 
-    <div class="section-divider mb-8"></div>
+ <div class="section-divider mb-8"></div>
 
-    <!-- Image Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="flex flex-col items-center">
-            <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092105.png?raw=true"
-                alt="Lab Question and Analytical Solution"
-                class="rounded-lg shadow-md img-zoom mb-4">
-            <p class="text-center text-sm text-gray-600">Lab Question & Analytical Solution</p>
-        </div>
-        <div class="flex flex-col items-center">
-            <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092129.png?raw=true"
-                alt="Python Code for Displacement of Arm"
-                class="rounded-lg shadow-md img-zoom mb-4">
-            <p class="text-center text-sm text-gray-600">Python Code</p>
-        </div>
-        <div class="flex flex-col items-center">
-            <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092139.png?raw=true"
-                alt="Python Output and Displacement Curve"
-                class="rounded-lg shadow-md img-zoom mb-4">
-            <p class="text-center text-sm text-gray-600">Output & Displacement Curve</p>
-        </div>
+<!-- Image Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div class="flex flex-col items-center">
+        <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092105.png?raw=true"
+            alt="Lab Question and Analytical Solution"
+            class="rounded-lg shadow-md img-zoom mb-4">
+        <p class="text-center text-sm text-gray-600">Lab Question & Analytical Solution</p>
     </div>
+    <div class="flex flex-col items-center">
+        <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092129.png?raw=true"
+            alt="Python Code for Displacement of Arm"
+            class="rounded-lg shadow-md img-zoom mb-4">
+        <p class="text-center text-sm text-gray-600">Python Code</p>
+    </div>
+    <div class="flex flex-col items-center">
+        <img src="https://github.com/Chidanand467/maths_portfolio/blob/main/Screenshot%202025-05-07%20092139.png?raw=true"
+            alt="Python Output and Displacement Curve"
+            class="rounded-lg shadow-md img-zoom mb-4">
+        <p class="text-center text-sm text-gray-600">Output & Displacement Curve</p>
+    </div>
+</div>
 
-      
 
     <!-- Analysis Box -->
     <div class="bg-gradient-to-r from-primary to-secondary text-blue-900 p-6 rounded-lg shadow-md mb-12">
