@@ -467,7 +467,12 @@ var dirElt = document.getElementById('direction-field');
 if (dirElt) {
     var dirCalc = Desmos.GraphingCalculator(dirElt, { expressions: false, settingsMenu: false });
 
-    // Generate direction field using Desmos parametric segments
+  // Direction Field for dy/dx = y - x
+var dirElt = document.getElementById('direction-field');
+if (dirElt) {
+    var dirCalc = Desmos.GraphingCalculator(dirElt, { expressions: false, settingsMenu: false });
+
+    // Generate direction field arrows over grid
     dirCalc.setExpression({
         id: 'dirfield',
         latex: `
@@ -482,6 +487,14 @@ if (dirElt) {
         color: Desmos.Colors.BLUE
     });
 
+    // Example solution curve: y = x + e^x (C = 1)
+    dirCalc.setExpression({
+        id: 'exampleCurve',
+        latex: 'y = x + e^x',
+        color: Desmos.Colors.RED,
+        lineStyle: Desmos.Styles.SOLID
+    });
+
     var showSolution = false;
     var btn = document.getElementById('toggle-solution');
     if (btn) {
@@ -489,20 +502,15 @@ if (dirElt) {
             showSolution = !showSolution;
             if (showSolution) {
                 dirCalc.setExpression({
-                    id: 'sol1',
-                    latex: 'y = x + e^{x - 2}',
-                    color: Desmos.Colors.RED
-                });
-                dirCalc.setExpression({
                     id: 'sol2',
-                    latex: 'y = x - 2e^{x - 1}',
-                    color: Desmos.Colors.GREEN
+                    latex: 'y = x - 2 e^{x - 1}',
+                    color: Desmos.Colors.GREEN,
+                    lineStyle: Desmos.Styles.DASHED
                 });
-                btn.textContent = "Hide Solution Curves";
+                btn.textContent = "Hide Extra Solution";
             } else {
-                dirCalc.removeExpression({ id: 'sol1' });
                 dirCalc.removeExpression({ id: 'sol2' });
-                btn.textContent = "Show Solution Curves";
+                btn.textContent = "Show Extra Solution";
             }
         });
     }
