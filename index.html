@@ -261,16 +261,20 @@
                             <input type="range" id="c1-value" min="-2" max="2" step="0.1" value="1" class="w-32">
                             <span id="c1-value-display" class="ml-2 text-sm text-gray-600">1</span>
                         </div>
-                        <div class="flex items-center ml-6">
+                                               <div class="flex items-center">
                             <label for="c2-value" class="mr-2 text-sm text-gray-600">C₂:</label>
                             <input type="range" id="c2-value" min="-2" max="2" step="0.1" value="1" class="w-32">
                             <span id="c2-value-display" class="ml-2 text-sm text-gray-600">1</span>
                         </div>
                     </div>
+                    <div class="text-sm text-gray-600">
+                        <b>My Interactive Demo:</b> Adjust C₁ and C₂ to observe how initial conditions change the solution curve.
+                    </div>
                 </div>
             </div>
         </section>
-       <section id="lab" class="section-fade-in py-16 mt-8">
+
+        <section id="lab" class="section-fade-in py-16 mt-8">
     <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
         Lab Assessment 1: Newton's Law of Cooling
     </h2>
@@ -346,7 +350,6 @@
             
         </p>
     </div>
-
     <!-- Real-Life Applications -->
     <div>
         <h3 class="text-xl font-semibold mb-4 text-primary text-center">
@@ -375,201 +378,61 @@
 </section>
 
     </main>
-    <footer class="bg-gray-900 text-gray-200 py-12 mt-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
-                    <ul>
-                        <li class="flex items-center mb-2">
-                            <i class="ri-mail-line ri-fw mr-2 w-4 h-4 flex items-center justify-center"></i>
-                            <span>01fe24bar027@kletech.ac.in</span>
-                        </li>
-                        <li class="flex items-center mb-2">
-                            <i class="ri-phone-line ri-fw mr-2 w-4 h-4 flex items-center justify-center"></i>
-                            <span>+91 7338447999</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="ri-map-pin-line ri-fw mr-2 w-4 h-4 flex items-center justify-center"></i>
-                            <span>Automation & Robotics Branch</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Resources</h3>
-                    <ul class="text-gray-300">
-                        <li class="mb-2"><a href="#" class="hover:text-primary transition-colors">Additional Examples</a></li>
-                        <li class="mb-2"><a href="#" class="hover:text-primary transition-colors">Practice Problems</a></li>
-                        <li class="mb-2"><a href="#" class="hover:text-primary transition-colors">Research Papers</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Textbook References</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Connect</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-github-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-linkedin-box-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-twitter-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-gray-700 flex justify-between items-center">
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-github-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-linkedin-box-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition-colors"><i class="ri-twitter-fill ri-lg w-6 h-6 flex items-center justify-center"></i></a>
-                </div>
-                <a href="#" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors cursor-pointer">Back to Top</a>
-            </div>
-        </div>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-100 text-center text-sm text-gray-500">
+        &copy; 2025 Chidanand Karennavar. All rights reserved.
     </footer>
-        </section>
-    </main>
 
+    <!-- Scripts to enable fade-in animations -->
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Section fade-in on scroll
-    const sections = document.querySelectorAll('.section-fade-in');
-    function checkSections() {
-        const triggerBottom = window.innerHeight * 0.8;
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < triggerBottom) {
-                section.classList.add('visible');
-            }
-        });
-    }
-    window.addEventListener('scroll', checkSections);
-    checkSections();
-
-    // Exponential Growth/Decay
-    var expElt = document.getElementById('exponential-growth');
-    var expCalc = null;
-    if (expElt) {
-        expCalc = Desmos.GraphingCalculator(expElt, {expressions: false, settingsMenu: false});
-        function plotExponential(r) {
-            expCalc.setExpression({id: 'exp', latex: 'y=1 e^{'+r+'x}'});
-            expCalc.setMathBounds({left: 0, right: 5, bottom: 0, top: 100});
-        }
-        plotExponential(0.5);
-        var growthSlider = document.getElementById('growth-rate');
-        if (growthSlider) {
-            growthSlider.addEventListener('input', function() {
-                plotExponential(this.value);
-                var valDisp = document.getElementById('growth-rate-value');
-                if (valDisp) valDisp.textContent = this.value;
-            });
-        }
-    }
-
-// Direction Field for dy/dx = y - x
-var dirElt = document.getElementById('direction-field');
-if (dirElt) {
-    var dirCalc = Desmos.GraphingCalculator(dirElt, { expressions: false, settingsMenu: false });
-
-  // Direction Field for dy/dx = y - x
-var dirElt = document.getElementById('direction-field');
-if (dirElt) {
-    var dirCalc = Desmos.GraphingCalculator(dirElt, { expressions: false, settingsMenu: false });
-
-    // Generate direction field arrows over grid
-    dirCalc.setExpression({
-        id: 'dirfield',
-        latex: `
-            \\left\\{
-                \\operatorname{segment}\\left(
-                    (x, y), 
-                    \\left(x + 0.2 / \\sqrt{1 + (y - x)^2},\ y + 0.2 * (y - x) / \\sqrt{1 + (y - x)^2}\\right)
-                \\right)
-                : x = -5...5,\ y = -5...5
-            \\right\\}
-        `,
-        color: Desmos.Colors.BLUE
-    });
-
-    // Example solution curve: y = x + e^x (C = 1)
-    dirCalc.setExpression({
-        id: 'exampleCurve',
-        latex: 'y = x + e^x',
-        color: Desmos.Colors.RED,
-        lineStyle: Desmos.Styles.SOLID
-    });
-
-    var showSolution = false;
-    var btn = document.getElementById('toggle-solution');
-    if (btn) {
-        btn.addEventListener('click', function() {
-            showSolution = !showSolution;
-            if (showSolution) {
-                dirCalc.setExpression({
-                    id: 'sol2',
-                    latex: 'y = x - 2 e^{x - 1}',
-                    color: Desmos.Colors.GREEN,
-                    lineStyle: Desmos.Styles.DASHED
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
                 });
-                btn.textContent = "Hide Extra Solution";
-            } else {
-                dirCalc.removeExpression({ id: 'sol2' });
-                btn.textContent = "Show Extra Solution";
-            }
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.section-fade-in').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Slider interaction updates
+            const c1Slider = document.getElementById('c1-value');
+            const c2Slider = document.getElementById('c2-value');
+            const c1Display = document.getElementById('c1-value-display');
+            const c2Display = document.getElementById('c2-value-display');
+
+            c1Slider.addEventListener('input', () => {
+                c1Display.textContent = c1Slider.value;
+            });
+            c2Slider.addEventListener('input', () => {
+                c2Display.textContent = c2Slider.value;
+            });
+
+            // Initialize Desmos graphs (placeholders)
+            const exponentialGrowthCalc = Desmos.GraphingCalculator(document.getElementById('exponential-growth'));
+            exponentialGrowthCalc.setExpression({ id: 'graph1', latex: 'y= e^{0.5x}' });
+
+            const directionFieldCalc = Desmos.GraphingCalculator(document.getElementById('direction-field'));
+            directionFieldCalc.setExpression({ id: 'graph2', latex: 'dy/dx = y(1-y)' });
+
+            const eulerMethodCalc = Desmos.GraphingCalculator(document.getElementById('euler-method'));
+            eulerMethodCalc.setExpression({ id: 'graph3', latex: 'y=1+x' });
+
+            const secondOrderCalc = Desmos.GraphingCalculator(document.getElementById('second-order-de'));
+            secondOrderCalc.setExpression({ id: 'graph4', latex: `y=${c1Slider.value} e^{x} + ${c2Slider.value} e^{2x}` });
+
+            // Update graph on slider change
+            const updateSecondOrderGraph = () => {
+                secondOrderCalc.setExpression({ id: 'graph4', latex: `y=${c1Slider.value} e^{x} + ${c2Slider.value} e^{2x}` });
+            };
+
+            c1Slider.addEventListener('input', updateSecondOrderGraph);
+            c2Slider.addEventListener('input', updateSecondOrderGraph);
         });
-    }
-}
-
-    // Euler's Method Visualization
-    var eulerElt = document.getElementById('euler-method');
-    if (eulerElt) {
-        var eulerCalc = Desmos.GraphingCalculator(eulerElt, {expressions: false, settingsMenu: false});
-        function plotEuler(h) {
-            eulerCalc.setExpression({id: 'exact', latex: 'y=e^{x}', color: Desmos.Colors.BLUE});
-            var x = 0, y = 1;
-            var points = [[x, y]];
-            while (x < 2) {
-                y = y + h * y;
-                x = x + h;
-                points.push([x, y]);
-            }
-            eulerCalc.setExpression({id: 'euler', latex: 'A=['+points.map(pt=>'('+pt[0]+','+pt[1]+')').join(',')+']', color: Desmos.Colors.RED});
-            eulerCalc.setExpression({id: 'eulerplot', latex: '\\operatorname{polygon}(A)', color: Desmos.Colors.RED});
-            eulerCalc.setMathBounds({left: 0, right: 2, bottom: 0, top: 8});
-        }
-        plotEuler(0.5);
-        var stepSlider = document.getElementById('step-size');
-        if (stepSlider) {
-            stepSlider.addEventListener('input', function() {
-                plotEuler(parseFloat(this.value));
-                var valDisp = document.getElementById('step-size-value');
-                if (valDisp) valDisp.textContent = this.value;
-            });
-        }
-    }
-
-    // Second-Order Homogeneous Solution
-    var soElt = document.getElementById('second-order-de');
-    if (soElt) {
-        var soCalc = Desmos.GraphingCalculator(soElt, {expressions: false, settingsMenu: false});
-        function plotSecondOrder(c1, c2) {
-            soCalc.setExpression({id: 'so', latex: 'y='+c1+'e^{x}+'+c2+'e^{2x}'});
-            soCalc.setMathBounds({left: 0, right: 2, bottom: -10, top: 10});
-        }
-        plotSecondOrder(1,1);
-        var c1Slider = document.getElementById('c1-value');
-        var c2Slider = document.getElementById('c2-value');
-        if (c1Slider && c2Slider) {
-            c1Slider.addEventListener('input', function() {
-                plotSecondOrder(this.value, c2Slider.value);
-                var valDisp = document.getElementById('c1-value-display');
-                if (valDisp) valDisp.textContent = this.value;
-            });
-            c2Slider.addEventListener('input', function() {
-                plotSecondOrder(c1Slider.value, this.value);
-                var valDisp = document.getElementById('c2-value-display');
-                if (valDisp) valDisp.textContent = this.value;
-            });
-        }
-    }
-});
-</script>
-
+    </script>
 </body>
 </html>
