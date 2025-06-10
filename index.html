@@ -353,9 +353,172 @@
             </div>
         </section>
 
+<!-- Chapter 3: Partial Differentiation -->
+<section id="partial-differentiation" class="section-fade-in py-12 mt-8">
+  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 3: Partial Differentiation</h2>
+  <div class="section-divider"></div>
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <p class="text-lg text-gray-700">In this chapter, we transitioned from single-variable calculus to multivariable analysis. We learned to interpret and compute changes in systems with more than one variable, laying the foundation for fields like thermodynamics, machine learning, and fluid mechanics.</p>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Functions of Several Variables</h3>
+      <p class="text-gray-700">Functions like <i>f(x, y)</i> and <i>f(x, y, z)</i> model multidimensional phenomena: topographic maps, economic surfaces, temperature distributions, etc. We visualized these as surfaces in 3D space and discussed their domain and range.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Limits and Continuity</h3>
+      <p class="text-gray-700">We explored how multivariable limits can vary depending on the path. For example, we used polar coordinates to examine if a limit exists at the origin by approaching along different curves—straight lines, parabolas, or spirals. We also learned about continuity in higher dimensions and the subtle behaviors of surface functions at singularities.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Partial Derivatives</h3>
+      <p class="text-gray-700">Partial derivatives measure how a function changes with respect to one variable while keeping others constant. We computed:
+        <br> \( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \), and higher-order derivatives like \( \frac{\partial^2 f}{\partial x \partial y} \).
+        <br>They are essential in studying wave motion, optimization, and thermodynamic systems.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Gradient and Directional Derivatives</h3>
+      <p class="text-gray-700">The gradient vector \( \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) \) points toward the direction of steepest increase. We learned how directional derivatives use a unit vector to compute the rate of change in any direction using:
+        <br>\( D_{\vec{u}} f = \nabla f \cdot \vec{u} \)
+        <br>We applied this in terrain slope modeling, machine learning loss surfaces, and magnetic fields.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Tangent Planes and Linear Approximations</h3>
+      <p class="text-gray-700">We approximated functions near a point using their tangent planes, similar to linearization in single-variable calculus:
+        <br>\( L(x, y) = f(a, b) + f_x(a, b)(x - a) + f_y(a, b)(y - b) \)</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Optimization and Extrema</h3>
+      <p class="text-gray-700">Using the first and second partial derivatives, we found local extrema by solving \( f_x = f_y = 0 \). The discriminant:
+        <br>\( D = f_{xx}f_{yy} - (f_{xy})^2 \)
+        <br>helped us classify points as local maxima, minima, or saddle points. We explored examples like profit maximization and minimum cost structures.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">Lagrange Multipliers</h3>
+      <p class="text-gray-700">We applied this method to optimize functions under constraints:
+        <br>\( \nabla f = \lambda \nabla g \)
+        <br>used in engineering design problems, like maximizing volume with a surface area constraint. This concept is fundamental in optimization algorithms used in AI.</p>
+    </div>
+
+    <div class="bg-gradient-to-r from-primary to-secondary text-blue-900 p-6 rounded-lg shadow-md">
+      <h4 class="font-bold text-lg mb-2">Reflection:</h4>
+      <p>I now understand how to analyze complex surfaces and apply mathematical tools like gradients and constraints to real problems. I used Python libraries like `sympy` to automate partial differentiation and `matplotlib` to visualize surfaces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 4: Numerical PDEs Using Finite Difference Methods -->
+<section id="numerical-pde" class="section-fade-in py-12 mt-8">
+  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 4: Numerical PDEs Using Finite Difference Methods</h2>
+  <div class="section-divider"></div>
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <p class="text-lg text-gray-700">This chapter focused on solving real-world systems described by Partial Differential Equations (PDEs), where analytical solutions are not feasible. We learned numerical methods to simulate heat flow, wave propagation, and equilibrium states using computers.</p>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Classification of PDEs</h3>
+      <p class="text-gray-700">PDEs are classified based on the discriminant \( B^2 - AC \). This determines the nature of solutions:</p>
+      <ul class="list-disc pl-6 text-gray-600">
+        <li><b>Elliptic</b>: \( B^2 - AC < 0 \) → e.g., Laplace's equation (steady-state heat, electrostatics)</li>
+        <li><b>Parabolic</b>: \( B^2 - AC = 0 \) → e.g., Heat equation (diffusion over time)</li>
+        <li><b>Hyperbolic</b>: \( B^2 - AC > 0 \) → e.g., Wave equation (vibrations, acoustics)</li>
+      </ul>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Finite Difference Approximations</h3>
+      <p class="text-gray-700">We approximated derivatives using finite differences. These were key to converting PDEs into algebraic forms that can be computed iteratively:</p>
+      <ul class="list-disc pl-6 text-gray-600">
+        <li>Forward: \( f'(x) \approx \frac{f(x+h) - f(x)}{h} \)</li>
+        <li>Backward: \( f'(x) \approx \frac{f(x) - f(x-h)}{h} \)</li>
+        <li>Central: \( f'(x) \approx \frac{f(x+h) - f(x-h)}{2h} \)</li>
+        <li>Second-order: \( f''(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2} \)</li>
+      </ul>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Heat Equation (Parabolic PDE)</h3>
+      <p class="text-gray-700">We used the explicit (Bendre-Schmidt) method and implicit (Crank-Nicolson) scheme:</p>
+      <p>Explicit: \( u_i^{n+1} = \lambda u_{i-1}^n + (1 - 2\lambda) u_i^n + \lambda u_{i+1}^n \)</p>
+      <p>\( \lambda = \frac{\alpha \Delta t}{(\Delta x)^2} \), stable if \( \lambda \leq 0.5 \)</p>
+      <p>Crank-Nicolson offers better accuracy and unconditional stability but requires solving linear systems.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Wave Equation (Hyperbolic PDE)</h3>
+      <p class="text-gray-700">We modeled vibrations using:</p>
+      <p>\( u_i^{n+1} = 2(1 - \lambda^2)u_i^n + \lambda^2(u_{i+1}^n + u_{i-1}^n) - u_i^{n-1} \)</p>
+      <p>Where \( \lambda = \frac{c\Delta t}{\Delta x} \). This was applied to simulate strings and sound waves.</p>
+    </div>
+
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Laplace Equation (Elliptic PDE)</h3>
+      <p class="text-gray-700">To solve steady-state problems, we used iterative methods:</p>
+      <ul class="list-disc pl-6 text-gray-600">
+        <li>Standard 5-point: \( u_{i,j} = \frac{1}{4}(u_{i+1,j} + u_{i-1,j} + u_{i,j+1} + u_{i,j-1}) \)</li>
+        <li>Diagonal 5-point: For more accuracy in diagonal influence</li>
+        <li>Gauss-Seidel and Successive Over-Relaxation to accelerate convergence</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary">Summary Table</h3>
+      <table class="w-full text-sm text-gray-700">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="py-2 px-4">Type</th>
+            <th class="py-2 px-4">PDE</th>
+            <th class="py-2 px-4">Method</th>
+            <th class="py-2 px-4">Stability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2 px-4">Parabolic</td>
+            <td class="py-2 px-4">Heat Equation</td>
+            <td class="py-2 px-4">Explicit, Crank-Nicolson</td>
+            <td class="py-2 px-4">Conditional, Unconditional</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4">Hyperbolic</td>
+            <td class="py-2 px-4">Wave Equation</td>
+            <td class="py-2 px-4">Central Difference</td>
+            <td class="py-2 px-4">Stable if \( \lambda \leq 1 \)</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4">Elliptic</td>
+            <td class="py-2 px-4">Laplace Equation</td>
+            <td class="py-2 px-4">Iterative, SOR</td>
+            <td class="py-2 px-4">Converges Iteratively</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bg-gradient-to-r from-primary to-secondary text-blue-900 p-6 rounded-lg shadow-md">
+      <h4 class="font-bold text-lg mb-2">Applications:</h4>
+      <ul class="list-disc pl-6 text-sm">
+        <li>Simulating thermal diffusion in heat exchangers (Parabolic)</li>
+        <li>Modeling earthquake waves (Hyperbolic)</li>
+        <li>Solving electrostatics and fluid flow problems (Elliptic)</li>
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-r from-secondary to-primary text-blue-900 p-6 rounded-lg shadow-md">
+      <h4 class="font-bold text-lg mb-2">Reflection:</h4>
+      <p>This chapter gave me the power to simulate nature mathematically. I applied FDM using Python and NumPy, created 3D visualizations in `matplotlib`, and understood the balance between accuracy, stability, and computational cost in real simulations.</p>
+    </div>
+  </div>
+</section>
+
         <!-- Screenshot Gallery -->
   <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
-      Some phtos of us Exploring CARR lab and learning applicatoin of calculus in COBOTS and ROBOTS
+      Some photos of us Exploring CARR lab and learning applicatoin of calculus in COBOTS and ROBOTS
     </h2>
  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div class="flex flex-col items-center">
@@ -603,7 +766,7 @@
 
     <!-- Footer -->
     <footer class="py-6 bg-gray-100 text-center text-sm text-gray-500">
-        &copy; 2025 Chidanand Karennavar. All rights reserved.
+        &copy; 2025 Chidanand Karennavar. Automation & Robotics.
     </footer>
 
     <!-- Scripts to enable fade-in animations -->
