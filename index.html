@@ -561,6 +561,66 @@
   </div>
 </section>
 
+<!-- Chapter 5: Double Integrals, Numerical Integration & Series -->
+<section id="double-integrals" class="section-fade-in py-12 mt-8">
+  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 5: Double Integrals, Numerical Methods & Series</h2>
+  <div class="section-divider"></div>
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <p class="text-lg text-gray-700">This chapter helped me understand how to evaluate the volume under surfaces, approximate definite integrals numerically, and expand complex functions into power series for easier analysis. These techniques form the backbone of engineering simulations, physics modeling, and computational mathematics.</p>
+
+    <!-- Double Integrals -->
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary mb-3">1. Double Integrals Over Regions</h3>
+      <p class="text-gray-700">Double integrals are used to compute the volume under a surface f(x, y) over a two-dimensional region. We practiced evaluating iterated integrals using rectangular and triangular limits.</p>
+      <p class="text-gray-700">We also learned how to reverse the order of integration for easier computation and visualized integration domains using sketches.</p>
+      <p class="text-sm text-blue-900 mt-2">🛠 Real-World Link: Calculating mass from density in a thin metal plate with non-uniform material distribution.</p>
+    </div>
+
+    <!-- Numerical Integration -->
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary mb-3">2. Numerical Integration: Trapezoidal & Simpson’s Rule</h3>
+      <p class="text-gray-700">When exact integration isn't possible, we use numerical methods. I learned how to apply the Trapezoidal Rule and Simpson’s Rule to estimate integrals based on tabular data or functional values at discrete points.</p>
+      <ul class="list-disc text-gray-700 pl-6">
+        <li><b>Trapezoidal Rule:</b> Approximates area using trapezoids.</li>
+        <li><b>Simpson’s Rule:</b> Uses parabolic arcs to improve accuracy (needs even number of intervals).</li>
+      </ul>
+      <p class="text-sm text-blue-900 mt-2">🛠 Used in engineering for approximating forces on curved beams or energy dissipated in systems.</p>
+    </div>
+
+    <!-- Power Series -->
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary mb-3">3. Power, Maclaurin & Taylor Series</h3>
+      <p class="text-gray-700">We expanded functions into infinite series for approximation and analysis.</p>
+      <ul class="list-disc text-gray-700 pl-6">
+        <li><b>Power Series:</b> f(x) = \sum_{n=0}^{\infty} a_n (x - a)^n</li>
+        <li><b>Maclaurin Series:</b> Special case when a = 0. Ex: \sin x, \cos x, e^x</li>
+        <li><b>Taylor Series:</b> Expanded about any point a. Used to approximate difficult functions locally.</li>
+      </ul>
+      <p class="text-sm text-blue-900 mt-2">🧠 Application: Estimating robot arm trajectory with Taylor expansion for predictive control.</p>
+    </div>
+
+    <!-- Python Code Card -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold text-primary mb-3">4. Python Example: Taylor Expansion of sin(x)</h3>
+      <pre class="bg-gray-100 p-4 rounded-md text-sm overflow-auto"><code>
+import sympy as sp
+x = sp.symbols('x')
+f = sp.sin(x)
+series = sp.series(f, x, 0, 6)
+print("Taylor expansion of sin(x):", series)
+      </code></pre>
+      <p class="text-sm text-gray-600 mt-2">Output: x - \frac{x^3}{3!} + \frac{x^5}{5!}</p>
+    </div>
+
+    <!-- Reflection -->
+    <div class="bg-gradient-to-r from-primary to-secondary text-blue-900 p-6 rounded-lg shadow-md">
+      <h4 class="font-bold text-lg mb-2">Reflection:</h4>
+      <p class="text-sm">This chapter helped me see how calculus connects to computational tools. I practiced estimating integrals numerically and used symbolic math libraries in Python to derive series expansions. These tools are vital for automation, control systems, and AI, where precision and efficiency matter.</p>
+    </div>
+  </div>
+</section>
+          
         <!-- Screenshot Gallery -->
   <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
       Some photos of us Exploring CARR lab and learning applicatoin of calculus in COBOTS and ROBOTS
