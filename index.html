@@ -84,6 +84,7 @@
             <a href="#partial-differentiation" class="nav-link text-gray-700 hover:text-primary transition-colors">Partial Differentiation</a>
             <a href="#numerical-pde" class="nav-link text-gray-700 hover:text-primary transition-colors">Partial Differential Equations</a>
             <a href="#lab" class="nav-link text-gray-700 hover:text-primary transition-colors">Lab</a>
+            <a href="#multiple-integrals" class="nav-link text-gray-700 hover:text-primary transition-colors">Multiple Integrals</a>
         </div>
     </div>
 </nav>
@@ -358,7 +359,7 @@
           
         <!-- Second-Order Differential Equations -->
         <section id="second-order" class="section-fade-in py-12 mt-8">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Second-Order Differential Equations</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 2 :Second-Order Differential Equations</h2>
             <div class="section-divider"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div>
@@ -563,63 +564,65 @@
 
 <!-- Chapter 5: Double Integrals, Numerical Integration & Series -->
 <section id="double-integrals" class="section-fade-in py-12 mt-8">
-  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 5: Double Integrals, Numerical Methods & Series</h2>
+  <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800">Chapter 5: Multiple Integrals and Power series </h2>
   <div class="section-divider"></div>
 
   <div class="max-w-4xl mx-auto space-y-6">
-    <p class="text-lg text-gray-700">This chapter helped me understand how to evaluate the volume under surfaces, approximate definite integrals numerically, and expand complex functions into power series for easier analysis. These techniques form the backbone of engineering simulations, physics modeling, and computational mathematics.</p>
+    <p class="text-lg text-gray-700">In this chapter, I delved into evaluating functions over regions using double integrals, approximating definite integrals when exact answers are difficult, and representing functions using infinite series such as Taylor and Maclaurin series. These techniques are central in engineering simulations, robotic movement predictions, and physical system modeling.</p>
 
     <!-- Double Integrals -->
     <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-semibold text-primary mb-3">1. Double Integrals Over Regions</h3>
-      <p class="text-gray-700">Double integrals are used to compute the volume under a surface f(x, y) over a two-dimensional region. We practiced evaluating iterated integrals using rectangular and triangular limits.</p>
-      <p class="text-gray-700">We also learned how to reverse the order of integration for easier computation and visualized integration domains using sketches.</p>
-      <p class="text-sm text-blue-900 mt-2">🛠 Real-World Link: Calculating mass from density in a thin metal plate with non-uniform material distribution.</p>
+      <h3 class="text-xl font-semibold mb-3 text-primary">1. Double Integrals Over Regions</h3>
+      <p class="text-gray-700">Double integrals allow calculation of volume under a surface \( f(x, y) \) over a region \( R \). For rectangular regions:</p>
+      <div class="bg-gray-50 p-4 rounded-md my-3">
+        \[ \int_a^b \int_c^d f(x, y) \, dy \, dx \]
+      </div>
+      <p class="text-gray-700">We practiced changing order of integration, interpreting geometrical limits, and even integrating over non-rectangular domains bounded by curves like \( y = x^2 \) and \( y = \sqrt{x} \). These tools are essential when modeling material mass, area distributions, or electrostatic potential in 2D fields.</p>
+      <p class="text-sm text-blue-900 mt-2">🔧 Real-life example: Calculating the thermal energy stored across a metal plate with spatial temperature distribution \( T(x, y) \).</p>
     </div>
 
     <!-- Numerical Integration -->
     <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-semibold text-primary mb-3">2. Numerical Integration: Trapezoidal & Simpson’s Rule</h3>
-      <p class="text-gray-700">When exact integration isn't possible, we use numerical methods. I learned how to apply the Trapezoidal Rule and Simpson’s Rule to estimate integrals based on tabular data or functional values at discrete points.</p>
-      <ul class="list-disc text-gray-700 pl-6">
-        <li><b>Trapezoidal Rule:</b> Approximates area using trapezoids.</li>
-        <li><b>Simpson’s Rule:</b> Uses parabolic arcs to improve accuracy (needs even number of intervals).</li>
-      </ul>
-      <p class="text-sm text-blue-900 mt-2">🛠 Used in engineering for approximating forces on curved beams or energy dissipated in systems.</p>
+      <h3 class="text-xl font-semibold mb-3 text-primary">2. Numerical Integration Techniques</h3>
+      <p class="text-gray-700">We used the Trapezoidal Rule and Simpson’s Rule to estimate definite integrals numerically. These are crucial when functions are defined by datasets or are too complex to integrate symbolically.</p>
+      <div class="bg-gray-50 p-4 rounded-md my-3">
+        \[ \text{Trapezoidal: } \int_a^b f(x)\,dx \approx \frac{h}{2}[f(a) + 2f(x_1) + \cdots + f(b)] \]<br>
+        \[ \text{Simpson: } \int_a^b f(x)\,dx \approx \frac{h}{3}[f(a) + 4f(x_1) + 2f(x_2) + \cdots + f(b)] \]
+      </div>
+      <p class="text-gray-700">I coded these methods in Python to simulate distance travelled by a mobile robot using sensor velocity data. Simpson's Rule gave more accurate results due to quadratic fitting.</p>
     </div>
 
-    <!-- Power Series -->
+    <!-- Series Expansions -->
     <div class="equation-card bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-semibold text-primary mb-3">3. Power, Maclaurin & Taylor Series</h3>
-      <p class="text-gray-700">We expanded functions into infinite series for approximation and analysis.</p>
-      <ul class="list-disc text-gray-700 pl-6">
-        <li><b>Power Series:</b> f(x) = \sum_{n=0}^{\infty} a_n (x - a)^n</li>
-        <li><b>Maclaurin Series:</b> Special case when a = 0. Ex: \sin x, \cos x, e^x</li>
-        <li><b>Taylor Series:</b> Expanded about any point a. Used to approximate difficult functions locally.</li>
-      </ul>
-      <p class="text-sm text-blue-900 mt-2">🧠 Application: Estimating robot arm trajectory with Taylor expansion for predictive control.</p>
+      <h3 class="text-xl font-semibold mb-3 text-primary">3. Taylor & Maclaurin Series</h3>
+      <p class="text-gray-700">Functions can be approximated near a point using Taylor Series:</p>
+      <div class="bg-gray-50 p-4 rounded-md my-3">
+        \[ f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots \]
+      </div>
+      <p class="text-gray-700">Maclaurin series is a Taylor series about 0. We derived series for \( \sin x, \cos x, e^x \), and used them to approximate small-angle functions in control algorithms.</p>
+      <p class="text-sm text-blue-900 mt-2">🧭 Used in AI algorithms to linearize non-linear cost functions and control systems for robot balance.</p>
     </div>
 
-    <!-- Python Code Card -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-semibold text-primary mb-3">4. Python Example: Taylor Expansion of sin(x)</h3>
-      <pre class="bg-gray-100 p-4 rounded-md text-sm overflow-auto"><code>
-import sympy as sp
+    <!-- Python Code Example -->
+    <div class="equation-card bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-semibold mb-3 text-primary">4. Python Code: Maclaurin Series of sin(x)</h3>
+      <pre class="bg-gray-100 p-4 rounded-md text-sm overflow-auto">
+<code>import sympy as sp
 x = sp.symbols('x')
 f = sp.sin(x)
 series = sp.series(f, x, 0, 6)
-print("Taylor expansion of sin(x):", series)
-      </code></pre>
-      <p class="text-sm text-gray-600 mt-2">Output: x - \frac{x^3}{3!} + \frac{x^5}{5!}</p>
+print(series)</code></pre>
+      <p class="text-gray-700 mt-2">Output: \( x - \frac{x^3}{6} + \frac{x^5}{120} + \cdots \)</p>
     </div>
 
     <!-- Reflection -->
     <div class="bg-gradient-to-r from-primary to-secondary text-blue-900 p-6 rounded-lg shadow-md">
       <h4 class="font-bold text-lg mb-2">Reflection:</h4>
-      <p class="text-sm">This chapter helped me see how calculus connects to computational tools. I practiced estimating integrals numerically and used symbolic math libraries in Python to derive series expansions. These tools are vital for automation, control systems, and AI, where precision and efficiency matter.</p>
+      <p class="text-sm">This chapter gave me confidence to use numerical techniques where exact formulas fail and helped me connect series with physical modeling. These ideas are already helping me in robotics, where real-time estimation and approximation are key. The practical use of Python reinforced how math and computation go hand-in-hand in engineering design.</p>
     </div>
   </div>
 </section>
+
           
         <!-- Screenshot Gallery -->
   <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 text-center">
